@@ -1,16 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
+import LoginPage from './pages/LoginPage';
 
-// Placeholder pages (we'll build these properly later)
-function LoginPage() {
-  return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1>Login Page</h1>
-      <p>Coming soon...</p>
-    </div>
-  );
-}
 
 function Dashboard() {
   return (
