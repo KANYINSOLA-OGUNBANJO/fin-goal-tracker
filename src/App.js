@@ -2,40 +2,52 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import LoginPage from './pages/LoginPage';
-
+import Navbar from './components/layout/Navbar';
 
 function Dashboard() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Dashboard</h1>
-      <p>Welcome to FinGoal! Your financial goals manager.</p>
+    <div>
+      <Navbar />
+      <div style={{ padding: '2rem' }}>
+        <h1>Dashboard</h1>
+        <p>Welcome to FinGoal! Your financial goals manager.</p>
+      </div>
     </div>
   );
 }
 
 function GoalsPage() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Goals Page</h1>
-      <p>Your financial goals will appear here.</p>
+    <div>
+      <Navbar />
+      <div style={{ padding: '2rem' }}>
+        <h1>Goals Page</h1>
+        <p>Your financial goals will appear here.</p>
+      </div>
     </div>
   );
 }
 
 function BoardPage() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Kanban Board</h1>
-      <p>Drag and drop your tasks here.</p>
+    <div>
+      <Navbar />
+      <div style={{ padding: '2rem' }}>
+        <h1>Kanban Board</h1>
+        <p>Drag and drop your tasks here.</p>
+      </div>
     </div>
   );
 }
 
 function ProfilePage() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Profile Page</h1>
-      <p>Manage your profile and settings.</p>
+    <div>
+      <Navbar />
+      <div style={{ padding: '2rem' }}>
+        <h1>Profile Page</h1>
+        <p>Manage your profile and settings.</p>
+      </div>
     </div>
   );
 }
