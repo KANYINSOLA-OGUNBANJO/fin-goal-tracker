@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+
 function GoalCard({ goal, onEdit, onDelete }) {
+  const navigate = useNavigate();
+  
   const progress = goal.targetAmount > 0 
     ? Math.round((goal.currentAmount / goal.targetAmount) * 100) 
     : 0;
@@ -19,7 +23,15 @@ function GoalCard({ goal, onEdit, onDelete }) {
         marginBottom: '1rem'
       }}>
         <div>
-          <h3 style={{ margin: '0 0 0.5rem 0', color: '#333' }}>
+          <h3 
+            onClick={() => navigate(`/goals/${goal.id}`)}
+            style={{ 
+              margin: '0 0 0.5rem 0', 
+              color: '#333',
+              cursor: 'pointer',
+              textDecoration: 'underline'
+            }}
+          >
             {goal.name}
           </h3>
           <p style={{ margin: '0', color: '#666', fontSize: '0.9rem' }}>

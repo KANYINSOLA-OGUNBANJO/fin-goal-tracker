@@ -1,11 +1,11 @@
-import GoalsPage from './pages/GoalsPage';
-import Dashboard from './pages/Dashboard';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import LoginPage from './pages/LoginPage';
 import Navbar from './components/layout/Navbar';
-
+import Dashboard from './pages/Dashboard';
+import GoalsPage from './pages/GoalsPage';
+import GoalDetailPage from './pages/GoalDetailPage';
 
 function BoardPage() {
   return (
@@ -65,6 +65,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <GoalsPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/goals/:id" 
+              element={
+                <ProtectedRoute>
+                  <GoalDetailPage />
                 </ProtectedRoute>
               } 
             />
