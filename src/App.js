@@ -1,20 +1,9 @@
+import Dashboard from './pages/Dashboard';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import LoginPage from './pages/LoginPage';
 import Navbar from './components/layout/Navbar';
-
-function Dashboard() {
-  return (
-    <div>
-      <Navbar />
-      <div style={{ padding: '2rem' }}>
-        <h1>Dashboard</h1>
-        <p>Welcome to FinGoal! Your financial goals manager.</p>
-      </div>
-    </div>
-  );
-}
 
 function GoalsPage() {
   return (
