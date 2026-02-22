@@ -37,7 +37,6 @@ function TaskForm({ task, goalId, onSave, onCancel }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* Task Title */}
       <div style={{ marginBottom: '1rem' }}>
         <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
           Task Title *
@@ -60,7 +59,6 @@ function TaskForm({ task, goalId, onSave, onCancel }) {
         />
       </div>
 
-      {/* Description */}
       <div style={{ marginBottom: '1rem' }}>
         <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
           Description
@@ -83,7 +81,6 @@ function TaskForm({ task, goalId, onSave, onCancel }) {
         />
       </div>
 
-      {/* Status */}
       <div style={{ marginBottom: '1rem' }}>
         <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
           Status
@@ -107,7 +104,6 @@ function TaskForm({ task, goalId, onSave, onCancel }) {
         </select>
       </div>
 
-      {/* Priority */}
       <div style={{ marginBottom: '1rem' }}>
         <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
           Priority
@@ -131,7 +127,6 @@ function TaskForm({ task, goalId, onSave, onCancel }) {
         </select>
       </div>
 
-      {/* Due Date */}
       <div style={{ marginBottom: '1.5rem' }}>
         <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
           Due Date
@@ -152,7 +147,6 @@ function TaskForm({ task, goalId, onSave, onCancel }) {
         />
       </div>
 
-      {/* Buttons */}
       <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end' }}>
         <button
           type="button"
