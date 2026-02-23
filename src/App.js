@@ -1,3 +1,4 @@
+import BoardPage from './pages/BoardPage';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -6,18 +7,6 @@ import Navbar from './components/layout/Navbar';
 import Dashboard from './pages/Dashboard';
 import GoalsPage from './pages/GoalsPage';
 import GoalDetailPage from './pages/GoalDetailPage';
-
-function BoardPage() {
-  return (
-    <div>
-      <Navbar />
-      <div style={{ padding: '2rem' }}>
-        <h1>Kanban Board</h1>
-        <p>Drag and drop your tasks here.</p>
-      </div>
-    </div>
-  );
-}
 
 function ProfilePage() {
   return (
