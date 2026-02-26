@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import Navbar from '../components/layout/Navbar';
 import TaskCard from '../components/tasks/TaskCard';
 import TaskForm from '../components/tasks/TaskForm';
@@ -52,8 +53,10 @@ function GoalDetailPage() {
   const handleSaveTask = (taskData) => {
     if (editingTask) {
       setTasks(tasks.map(t => t.id === taskData.id ? taskData : t));
+      toast.success('Task updated! 📝');
     } else {
       setTasks([...tasks, taskData]);
+      toast.success('Task created! ✨');
     }
     setIsModalOpen(false);
     setEditingTask(null);
@@ -62,6 +65,7 @@ function GoalDetailPage() {
   const handleDeleteTask = (taskId) => {
     if (window.confirm('Are you sure you want to delete this task?')) {
       setTasks(tasks.filter(t => t.id !== taskId));
+      toast.success('Task deleted');
     }
   };
 
@@ -72,6 +76,11 @@ function GoalDetailPage() {
         ? { ...t, status: newStatus, completedAt: newStatus === 'done' ? new Date().toISOString() : null }
         : t
     ));
+    if (newStatus === 'done') {
+      toast.success('Task completed! 🎉');
+    } else {
+      toast('Task marked as to do');
+    }
   };
 
   const progress = goal.targetAmount > 0 

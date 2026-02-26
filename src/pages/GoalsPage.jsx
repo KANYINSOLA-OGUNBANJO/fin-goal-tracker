@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 import Navbar from '../components/layout/Navbar';
 import GoalCard from '../components/goals/GoalCard';
 import GoalForm from '../components/goals/GoalForm';
@@ -24,9 +25,11 @@ function GoalsPage() {
     if (editingGoal) {
       // Update existing goal
       setGoals(goals.map(g => g.id === goalData.id ? goalData : g));
+      toast.success('Goal updated successfully! 🎯');
     } else {
       // Create new goal
       setGoals([...goals, goalData]);
+      toast.success('Goal created successfully! 🎯');
     }
     setIsModalOpen(false);
     setEditingGoal(null);
@@ -35,6 +38,7 @@ function GoalsPage() {
   const handleDeleteGoal = (goalId) => {
     if (window.confirm('Are you sure you want to delete this goal?')) {
       setGoals(goals.filter(g => g.id !== goalId));
+      toast.success('Goal deleted successfully');
     }
   };
 

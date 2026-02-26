@@ -1,5 +1,6 @@
 import Navbar from '../components/layout/Navbar';
 import StatsCard from '../components/dashboard/StatsCard';
+import ProgressChart from '../components/dashboard/ProgressChart';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function Dashboard() {
@@ -57,6 +58,11 @@ function Dashboard() {
             color="#10b981"
           />
         </div>
+
+        {/* Progress Chart */}
+        {totalTasks > 0 && (
+          <ProgressChart goals={goals} tasks={tasks} />
+        )}
 
         {/* Welcome Message */}
         <div style={{
