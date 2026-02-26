@@ -1,3 +1,4 @@
+import ProfilePage from './pages/ProfilePage';
 import BoardPage from './pages/BoardPage';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
@@ -7,18 +8,6 @@ import Navbar from './components/layout/Navbar';
 import Dashboard from './pages/Dashboard';
 import GoalsPage from './pages/GoalsPage';
 import GoalDetailPage from './pages/GoalDetailPage';
-
-function ProfilePage() {
-  return (
-    <div>
-      <Navbar />
-      <div style={{ padding: '2rem' }}>
-        <h1>Profile Page</h1>
-        <p>Manage your profile and settings.</p>
-      </div>
-    </div>
-  );
-}
 
 // Protected Route wrapper
 function ProtectedRoute({ children }) {
