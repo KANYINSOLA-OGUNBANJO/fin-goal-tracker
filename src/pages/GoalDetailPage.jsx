@@ -10,7 +10,7 @@ import useLocalStorage from '../hooks/useLocalStorage';
 function GoalDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [goals, setGoals] = useLocalStorage('fingoal_goals', []);
+  const [goals] = useLocalStorage('fingoal_goals', []);
   const [tasks, setTasks] = useLocalStorage('fingoal_tasks', []);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingTask, setEditingTask] = useState(null);

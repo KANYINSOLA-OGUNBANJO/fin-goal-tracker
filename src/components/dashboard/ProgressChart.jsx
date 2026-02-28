@@ -1,58 +1,42 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 function ProgressChart({ goals, tasks }) {
-  // Calculate data for the chart
-  const data = [
-    {
-      name: 'Goals',
-      total: goals.length,
-      active: goals.filter(g => g.status === 'active').length,
-    },
-    {
-      name: 'Tasks',
-      total: tasks.length,
-      completed: tasks.filter(t => t.status === 'done').length,
-      inProgress: tasks.filter(t => t.status === 'in_progress').length,
-      todo: tasks.filter(t => t.status === 'to_do').length,
-    }
-  ];
-
   const taskStatusData = [
-    { name: 'To Do', value: tasks.filter(t => t.status === 'to_do').length, color: '#d97706' },
-    { name: 'In Progress', value: tasks.filter(t => t.status === 'in_progress').length, color: '#2563eb' },
-    { name: 'Completed', value: tasks.filter(t => t.status === 'done').length, color: '#10b981' },
+    { name: 'To Do', value: tasks.filter(t => t.status === 'to_do').length, color: '#F59E0B' },
+    { name: 'In Progress', value: tasks.filter(t => t.status === 'in_progress').length, color: '#3B82F6' },
+    { name: 'Completed', value: tasks.filter(t => t.status === 'done').length, color: '#10B981' },
   ];
 
   return (
-    <div style={{
-      backgroundColor: 'white',
-      padding: '2rem',
-      borderRadius: '8px',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-      marginBottom: '2rem'
-    }}>
-      <h2 style={{ margin: '0 0 1.5rem 0', color: '#333', fontSize: '1.25rem' }}>
+    <>
+      <h2 style={{ 
+        margin: '0 0 1.5rem 0', 
+        color: '#FFFFFF', 
+        fontSize: '1.25rem',
+        fontWeight: '600'
+      }}>
         Task Progress Overview
       </h2>
       
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={taskStatusData}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.1)" />
           <XAxis 
             dataKey="name" 
-            tick={{ fill: '#666' }}
-            axisLine={{ stroke: '#e5e7eb' }}
+            tick={{ fill: 'rgba(255, 255, 255, 0.7)' }}
+            axisLine={{ stroke: 'rgba(255, 255, 255, 0.1)' }}
           />
           <YAxis 
-            tick={{ fill: '#666' }}
-            axisLine={{ stroke: '#e5e7eb' }}
+            tick={{ fill: 'rgba(255, 255, 255, 0.7)' }}
+            axisLine={{ stroke: 'rgba(255, 255, 255, 0.1)' }}
           />
           <Tooltip 
             contentStyle={{
-              backgroundColor: '#fff',
-              border: '1px solid #e5e7eb',
-              borderRadius: '4px',
-              padding: '10px'
+              backgroundColor: 'rgba(15, 20, 25, 0.95)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '8px',
+              padding: '12px',
+              color: '#FFFFFF'
             }}
           />
           <Bar dataKey="value" radius={[8, 8, 0, 0]}>
@@ -79,15 +63,15 @@ function ProgressChart({ goals, tasks }) {
               width: '12px',
               height: '12px',
               backgroundColor: item.color,
-              borderRadius: '2px'
+              borderRadius: '3px'
             }} />
-            <span style={{ fontSize: '0.9rem', color: '#666' }}>
-              {item.name}: <strong style={{ color: '#333' }}>{item.value}</strong>
+            <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)' }}>
+              {item.name}: <strong style={{ color: '#FFFFFF' }}>{item.value}</strong>
             </span>
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
